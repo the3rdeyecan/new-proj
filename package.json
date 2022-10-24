@@ -1,0 +1,19 @@
+{
+  "name": "new-proj",
+  "version": "0.1.0",
+  "description": "my project 1 at inception-u",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "author": "ashish verma",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "timer-machine": "^1.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
