@@ -1,7 +1,7 @@
 export function quizTimer() {
   let countdown = 15;
   let timer = setInterval(function () {
-    // console.log(countdown);
+    console.log('Timer:', countdown);
     countdown--;
     if (countdown === 0) {
       stopTimer();
@@ -12,5 +12,6 @@ export function quizTimer() {
     console.log('time is up!');
     clearInterval(timer);
   };
+  return quizTimer();
 }
 quizTimer();
