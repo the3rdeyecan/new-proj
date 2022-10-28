@@ -1,23 +1,27 @@
-import chalk from 'chalk';
 import inquirer from 'inquirer';
+import chalk from 'chalk';
 
 let playerName;
 
-const sleep = (a = 1000) => new Promise((b) => setTimeout(b, a)); //sleep function
+const sleep = (a = 1000) => new Promise((b) => setTimeout(b, a));
 
 async function welcome() {
   console.log("Welcome to the game! Let's test your javaScript knowledge \n");
-
   await sleep();
   console.log(`
-    ${chalk.bgYellowBright('HOW TO PLAY\n')}
-    ${chalk.greenBright('-> Answer the multiple choice javaScript questions.')}
-    ${chalk.greenBright("-> It's all or nothing !")}
-    ${chalk.greenBright(
-      "-> If you can't answer a question, you will loose the game!\n"
-    )}
-    ${chalk.greenBright('GOOD LUCK !!!\n')}
-  `);
+      ${chalk.bgYellowBright('HOW TO PLAY\n')}
+      ${chalk.greenBright(
+        `-> Answer the multiple choice javaScript questions.`
+      )}
+      ${chalk.greenBright(
+        '-> Use UP arrow or DOWN arrow to make a selection then press ENTER to submit your answer'
+      )}
+      ${chalk.greenBright("-> It's all or nothing !")}
+      ${chalk.greenBright(
+        "-> If you can't answer a question, you will loose the game!\n"
+      )}
+      ${chalk.greenBright('GOOD LUCK !!!\n')}
+    `);
 }
 
 async function askPlayerName() {
@@ -44,7 +48,6 @@ async function answerInput(isCorrect) {
     return looser();
   }
 }
-
 function winner() {
   console.clear();
   console.log(
@@ -59,11 +62,11 @@ function winner() {
 function looser() {
   console.clear();
   console.log(`
-    ${chalk.red('Bummer ! That was a wrong answer !')}
-    ${chalk.red(
-      `Sorry ${playerName}, you didn't win this one but remember! practice makes perfect!`
-    )}
-  `);
+      ${chalk.red('Bummer ! That was a wrong answer !')}
+      ${chalk.red(
+        `Sorry ${playerName}, you didn't win this one but remember! practice makes perfect!`
+      )}
+    `);
   console.log(chalk.yellowBright(`Thank you for your time !\n`));
   process.exit(0);
 }
